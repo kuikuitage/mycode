@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/menu/cancel.png</file>
+        <file>images/menu/color.png</file>
+        <file>images/menu/copy.png</file>
+        <file>images/menu/cut.png</file>
+        <file>images/menu/date.png</file>
+        <file>images/menu/exit.png</file>
+        <file>images/menu/font.png</file>
+        <file>images/menu/new.png</file>
+        <file>images/menu/open.png</file>
+        <file>images/menu/pageset.png</file>
+        <file>images/menu/paste.png</file>
+        <file>images/menu/print.png</file>
+        <file>images/menu/redo.png</file>
+        <file>images/menu/save.png</file>
+        <file>images/menu/saveas.png</file>
+        <file>images/menu/selectall.png</file>
+        <file>images/bg.jpg</file>
+        <file>images/about.gif</file>
+    </qresource>
+</RCC>

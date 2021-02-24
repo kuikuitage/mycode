@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>fileEditer</class>
+ <widget class="QMainWindow" name="fileEditer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>783</width>
+    <height>441</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>editer</string>
+  </property>
+  <widget class="QWidget" name="FileWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTextEdit" name="fileContent">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/bg.jpg);</string>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="fileMenuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>783</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>文件(&amp;F)</string>
+    </property>
+    <addaction name="newFile"/>
+    <addaction name="openFile"/>
+    <addaction name="saveFile"/>
+    <addaction name="saveFileAs"/>
+    <addaction name="separator"/>
+    <addaction name="pageSet"/>
+    <addaction name="printFile"/>
+    <addaction name="separator"/>
+    <addaction name="exitFile"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>编辑(&amp;E)</string>
+    </property>
+    <addaction name="cancel"/>
+    <addaction name="redo"/>
+    <addaction name="separator"/>
+    <addaction name="copy"/>
+    <addaction name="cut"/>
+    <addaction name="paste"/>
+    <addaction name="selectAll"/>
+    <addaction name="separator"/>
+    <addaction name="date"/>
+   </widget>
+   <widget class="QMenu" name="menuFormat">
+    <property name="title">
+     <string>格式(&amp;O)</string>
+    </property>
+    <addaction name="font"/>
+    <addaction name="color"/>
+   </widget>
+   <widget class="QMenu" name="menuCheck">
+    <property name="title">
+     <string>查看(&amp;V)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>帮助(&amp;H)</string>
+    </property>
+    <addaction name="update"/>
+    <addaction name="about"/>
+    <addaction name="help"/>
+    <addaction name="aboutWeb"/>
+    <addaction name="aboutQt"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuFormat"/>
+   <addaction name="menuCheck"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="editerToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="newFile"/>
+   <addaction name="openFile"/>
+   <addaction name="saveFile"/>
+   <addaction name="saveFileAs"/>
+   <addaction name="copy"/>
+   <addaction name="cut"/>
+   <addaction name="paste"/>
+   <addaction name="font"/>
+   <addaction name="color"/>
+  </widget>
+  <widget class="QStatusBar" name="editStatusBar"/>
+  <action name="newFile">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/new.png</normaloff>:/images/menu/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>新建(&amp;N)</string>
+   </property>
+  </action>
+  <action name="openFile">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/open.png</normaloff>:/images/menu/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开(&amp;O)</string>
+   </property>
+  </action>
+  <action name="saveFile">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/save.png</normaloff>:/images/menu/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存(&amp;S)</string>
+   </property>
+  </action>
+  <action name="saveFileAs">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/saveas.png</normaloff>:/images/menu/saveas.png</iconset>
+   </property>
+   <property name="text">
+    <string>另存为(&amp;A)</string>
+   </property>
+  </action>
+  <action name="pageSet">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/pageset.png</normaloff>:/images/menu/pageset.png</iconset>
+   </property>
+   <property name="text">
+    <string>页面设置(&amp;U)</string>
+   </property>
+  </action>
+  <action name="printFile">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/print.png</normaloff>:/images/menu/print.png</iconset>
+   </property>
+   <property name="text">
+    <string>打印(&amp;P)</string>
+   </property>
+  </action>
+  <action name="exitFile">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/exit.png</normaloff>:/images/menu/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出(&amp;X)</string>
+   </property>
+  </action>
+  <action name="cancel">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/cancel.png</normaloff>:/images/menu/cancel.png</iconset>
+   </property>
+   <property name="text">
+    <string>撤销(&amp;U)</string>
+   </property>
+   <property name="toolTip">
+    <string>撤销(U)</string>
+   </property>
+  </action>
+  <action name="redo">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/redo.png</normaloff>:/images/menu/redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>重做(&amp;R)</string>
+   </property>
+   <property name="toolTip">
+    <string>重做(R)</string>
+   </property>
+  </action>
+  <action name="copy">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/copy.png</normaloff>:/images/menu/copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>复制(&amp;C)</string>
+   </property>
+   <property name="toolTip">
+    <string>复制(C)</string>
+   </property>
+  </action>
+  <action name="cut">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/cut.png</normaloff>:/images/menu/cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>剪切(&amp;X)</string>
+   </property>
+   <property name="toolTip">
+    <string>剪切(X)</string>
+   </property>
+  </action>
+  <action name="paste">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/paste.png</normaloff>:/images/menu/paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>粘贴(&amp;P)</string>
+   </property>
+   <property name="toolTip">
+    <string>粘贴(P)</string>
+   </property>
+  </action>
+  <action name="selectAll">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/selectall.png</normaloff>:/images/menu/selectall.png</iconset>
+   </property>
+   <property name="text">
+    <string>全选(&amp;A)</string>
+   </property>
+   <property name="toolTip">
+    <string>全选(A)</string>
+   </property>
+  </action>
+  <action name="date">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/date.png</normaloff>:/images/menu/date.png</iconset>
+   </property>
+   <property name="text">
+    <string>日期(&amp;D)</string>
+   </property>
+   <property name="toolTip">
+    <string>日期(D)</string>
+   </property>
+  </action>
+  <action name="font">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/font.png</normaloff>:/images/menu/font.png</iconset>
+   </property>
+   <property name="text">
+    <string>字体(&amp;F)</string>
+   </property>
+   <property name="toolTip">
+    <string>字体(F)</string>
+   </property>
+  </action>
+  <action name="color">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/color.png</normaloff>:/images/menu/color.png</iconset>
+   </property>
+   <property name="text">
+    <string>颜色(&amp;L)</string>
+   </property>
+   <property name="toolTip">
+    <string>颜色(L)</string>
+   </property>
+  </action>
+  <action name="update">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/cancel.png</normaloff>:/images/menu/cancel.png</iconset>
+   </property>
+   <property name="text">
+    <string>更新(&amp;U)</string>
+   </property>
+   <property name="toolTip">
+    <string>更新(U)</string>
+   </property>
+  </action>
+  <action name="about">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/color.png</normaloff>:/images/menu/color.png</iconset>
+   </property>
+   <property name="text">
+    <string>关于软件(&amp;S)</string>
+   </property>
+   <property name="toolTip">
+    <string>关于软件(S)</string>
+   </property>
+  </action>
+  <action name="help">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/copy.png</normaloff>:/images/menu/copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>帮助(&amp;E)</string>
+   </property>
+   <property name="toolTip">
+    <string>帮助(E)</string>
+   </property>
+  </action>
+  <action name="aboutWeb">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/cut.png</normaloff>:/images/menu/cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>关于官网(&amp;W)</string>
+   </property>
+   <property name="toolTip">
+    <string>关于官网(W)</string>
+   </property>
+  </action>
+  <action name="aboutQt">
+   <property name="icon">
+    <iconset resource="imgs.qrc">
+     <normaloff>:/images/menu/date.png</normaloff>:/images/menu/date.png</iconset>
+   </property>
+   <property name="text">
+    <string>关于QT(&amp;Q)</string>
+   </property>
+   <property name="toolTip">
+    <string>关于QT(Q)</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="imgs.qrc"/>
+ </resources>
+ <connections/>
+</ui>
