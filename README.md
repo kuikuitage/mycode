@@ -238,3 +238,181 @@ https://blog.csdn.net/qq_36741436/article/details/78732201
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+repo forall -c "git config core.filemode false"
+
+repo forall -c “pwd;git clean -f;git checkout -f”;repo sync -c --no-tags;repo sync -l;_repo clean
+
+repo forall -c "git reset --hard && git clean -fd && git pull"
+
+repo sync -d
+repo forall -vc "git reset --hard"
+
+
+repo forall -c “pwd;git clean -f;git checkout -f”;repo sync -c --no-tags;repo sync -l;
+
+
+
+
+git rm --cached file_path 删除暂存区或分支上的文件, 但工作区需要使用, 只是不希望被版本控制（适用于已经被git add,但是又想撤销的情况） 
+git reset HEAD 	回退暂存区里的文件
+git reset HEAD~	回退已commit的上一个提交
+
+revert -n 撤销某次提交，但不自动生成提交日志、
+
+
+pull冲突，丢弃本地修改，使用origin/master分支，
+git fetch --all //只是下载代码到本地，不进行合并操作
+git reset --hard origin/master  //把HEAD指向最新下载的版本
+
+如果已制定可以简写 git reset --hard
+
+
+
+
+
+  read -p "ReadMe:" readme && export GWDIR=`date +%m%d_%H%M%S`_$readme && mkdir /home/gw/backup/$GWDIR -p; git status -uno > ~/.status; cat ~/.status | grep -o -E "modified.*|new file.*" | sed 's/modified:[ ]*//' | sed 's/new file:[ ]*//'| xargs -i cp --parents {} /home/gw/backup/$GWDIR; echo "PATH : $PWD" >> /home/gw/backup/$GWDIR/git.txt; echo "INFO : "$readme >> /home/gw/backup/$GWDIR/git.txt && echo "" >> /home/gw/backup/$GWDIR/git.txt ;git status >> /home/gw/backup/$GWDIR/git.txt; git diff >> /home/gw/backup/$GWDIR/diff.patch; vim  /home/gw/backup/$GWDIR/git.txt; chmod 777  /home/gw/backup/$GWDIR -R && chmod +w  /home/gw/backup/$GWDIR
+  
+
+git status -uno | grep -E "*.cpp$|*.c$|*.h$|*.mk$|*.make$|*.sh$|*CMakeLists.txt$" | sed 's/modified:[ ]*//' | sed 's/new file:[ ]*//'| xargs -i sh -c 'echo "**********************************************************************" && git diff {} && echo "**********************************************************************"'
+
+git stash save "xxx"
+
+  
+
+
+cd /home/gw/xxx;
+git format-patch sha1...sha2
+find . -name  "*.patch" | xargs -i root@scp {} ip:/home/gw/xxx;
+
+
+
+
+
+
+
+
+
+https://blog.csdn.net/qq_32534441/article/details/90645316
+
+https://blog.csdn.net/yanxiangyfg/article/details/80989680
+
+正向过滤
+lcov --extract Debug/coverage.info ‘source/’ -o Debug/finalresult.info
+反向过滤
+lcov --remove Debug/coverage.info '*UnitTest/*' '/usr/*' -o Debug/finalresult.info 
+
+genhtml 带参数--branch-coverage 
+lcov带参数--rc lcov_branch_coverage=1 
+展示覆盖率信息
+
+=====================================================
+Merg多份覆盖率数据
+lcov -a phase1.info -a phase2.info -o out.info
+其中phase1.info以及phase2.info为独立了的两份覆盖率数据，他们整合为一份out.info
+4.2 生成html格式的覆盖率报告
+genhtml -o result out.info
+其中out.info为要解析的覆盖率数据文件，生成的网页会放在result目录下
+genhtml失败时：（https://stackoverflow.com/questions/30345686/c-using-gcov-lcov-in-a-cmake-project/54900625#54900625）
+try to put --ignore-errors with genhtml command like that :
+genhtml -o out name.info --ignore-errors source
+4.3产生覆盖率文件，去除不需要的文件（include），或者包含需要的（source）
+转自：https://blog.csdn.net/hanshuai584044490/article/details/83374617
+问题：在产生了.gcno 和 .gcda两个文件后，使用lcov -c -d Debug/source/ -o Debug/coverage.info 产生中间文件coverage.info文件，然后用genhtml -o output/ Debug/coverage.info产生html文件，发现产生的index.xml文件包含了include，甚至/usr/*下的公共头文件，怎么去除这些不需要统计覆盖率的文件？
+1。正向提取需要的文件：
+//比如希望把source相关的路径提取出来
+lcov --extract Debug/coverage.info ‘source/’ -o Debug/finalresult.info
+2。反向去除不需要的文件：
+//比如希望去除UnitTest 和/usr/相关文件：
+lcov --remove Debug/coverage.info ‘UnitTest/’ ‘/usr/*’ -o Debug/finalresult.info
+使用：
+sudo lcov --remove helloworld_gcov0604.info  '/usr/*' 'Build/*' 'dbug/*' 'include/boost_1_59_0/*' '*/boost_1_59_0/*' -o remove06042.info
+
+使用过后，.info文件中也没有重复的行了！！！
+
+
+
+
+
+
+
+stracef
+strace -f -p    57063
+
+
+top -H -p 43389
+top -H -p `pidof video_engine_fuzz`
+top -H
+
+
+pstree -p 43389 |wc -l
+pstree -p 43389
+pstree -p 57063
+pstree -up
+pstree -p 57063
+
+
+
+
+
+
+SET(USER_KEY, "Hello World")
+MESSAGE( STATUS "this var key = ${USER_KEY}.")
+
+
+让cmake显示gcc/g++的编译信息
+set(CMAKE_VERBOSE_MAKEFILE ON)
+
+支持
+make VERBOSE=1
+
+
+make 强制编译
+make -B
+
+
+
+
+CMake 默认编译、链接选项
+https://blog.csdn.net/icbm/article/details/52336497?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-6.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-6.nonecase
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
