@@ -32,7 +32,6 @@
             <DT><A HREF="https://blog.csdn.net/yanxiangyfg/article/details/80989680">gcov代码覆盖率测试-原理和实践总结_yanxiangyfg的专栏-CSDN博客</A>
             <DT><A HREF="https://blog.csdn.net/yangziluomu/article/details/53405037">shell中set 指令的使用_旧人赋荒年-CSDN博客</A>
             <DT><A HREF="https://stackoverflow.com/questions/20866420/lcov-branches-at-the-end-of-a-function">c++ - LCOV branches at the end of a function - Stack Overflow</A>
-            <DT><A HREF="http://pages.huawei.com/OpenTools/TechnologyRadarForSoftwareDevelopers/doc/technology_radar_for_cpp_developer.html#0-%E5%89%8D%E8%A8%80">C++语言开发者技术雷达图 · GitBook</A>
             <DT><A HREF="https://blog.csdn.net/thl789/article/details/109920740">Android源码中c++ STL的namespace_田海立@CSDN-CSDN博客</A>
             <DT><A HREF="https://www.cnblogs.com/cmt/p/14553189.html">网站整改公告 - 博客园团队 - 博客园</A>
             <DT><A HREF="http://mirrors.edge.kernel.org/ubuntu/pool/universe/b/bpfcc/">Index of /ubuntu/pool/universe/b/bpfcc/</A>
@@ -359,7 +358,7 @@ strace -f -p    57063
 
 
 top -H -p 43389
-top -H -p `pidof video_engine_fuzz`
+top -H -p `pidof xxx`
 top -H
 
 
